@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dîners Inconnus – par Hermès & Co</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <div class="brand" role="banner">
+        <div class="logo" aria-hidden="true">DI</div>
+        <div>
+          <div style="font-weight:800">Dîners Inconnus</div>
+          <div style="font-size:13px;color:var(--muted)">Rencontres · Networking · Amitié</div>
+        </div>
+      </div>
+      <nav aria-label="navigation">
+        <a href="#" id="nav-home">Accueil</a>
+        <a href="#" id="nav-signup">S'inscrire</a>
+        <a href="#" id="nav-book">Réserver un dîner</a>
+      </nav>
+    </header>
+
+    <!-- === HERO / Accueil === -->
+    <section id="page-home">
+      <div class="hero">
+        <div class="hero-left">
+          <h1>Dîners entre inconnus — Rencontrez, partagez, créez des liens</h1>
+          <p class="lead">Nous organisons des dîners conviviaux où des personnes qui ne se connaissent pas viennent partager un repas et des discussions autour d'un thème.</p>
+         <p class="lead"><em>Objectif : élargir son carnet d'adresses, créer du networking et se faire de nouveaux amis.</em></p>
+        <div style="margin:12px 0"> 
+         <button class="cta" id="hero-signup">S'inscrire</button>
+          <button class="cta alt" id="hero-book" style="margin-left:12px;background:#2b6cb0">Réserver un dîner</button>
+        </div>
+        
+          <div class="gallery" aria-hidden="false">
+            <img src="C:\Users\ps09doctor\Desktop\Diner entre inconnus\Version Hermes\VERSION OFFICIELLE\plat-convivial-hiver-1170x781.jpg" alt="Ambiance dîner conviviale">
+            <img src="C:\Users\ps09doctor\Desktop\Diner entre inconnus\Version Hermes\VERSION OFFICIELLE\Discussion autour d'un plat.jpeg" alt="Discussion autour d'un plat">
+            <img src="C:\Users\ps09doctor\Desktop\Diner entre inconnus\Version Hermes\VERSION OFFICIELLE\Reseau et convivialite.jpg" alt="Réseau et convivialité">
+          </div>
+        </div>
+
+        <aside class="hero-right" aria-labelledby="how-title">
+          <h3 id="how-title">Comment ça marche</h3>
+          <ol style="margin:10px 0 0 18px;color:var(--muted)">
+            <li>Inscription & création de profil</li>
+            <li>Choix d'une date (mercredi / samedi / dimanche — créneaux 18h ou 19h)</li>
+            <li>Nous effectuons le matching selon centres d'intérêt et personnalité</li>
+            <li>Vous recevrez l'invitation finale avec détails (lieu, heure, thème) par e-mail/WhatsApp</li>
+          </ol>
+
+          <div style="margin-top:12px">
+            <strong>Contact & Paiement</strong>
+            <p class="small">Aucune transaction sur le site. Après confirmation, vous recevrez un mail pour le paiement via Mobile Money/virement et enverrez la preuve à <strong>ahmedicare13@gmail.com</strong>.</p>
+          </div>
+        </aside>
+      </div>
+
+      <div class="features" style="margin-top:22px">
+        <div class="card">
+          <h4 style="margin-top:0">Rencontres sélectionnées</h4>
+          <p class="small">Nous regroupons les participants qui partagent des centres d'intérêt et une dynamique similaire pour garantir des échanges pertinents.</p>
+        </div>
+        <div class="card">
+          <h4 style="margin-top:0">Ambiance conviviale</h4>
+          <p class="small">Des lieux choisis pour favoriser la discussion : restaurants, salons privés, terrasses, cafés, etc.</p>
+        </div>
+        <div class="card">
+          <h4 style="margin-top:0">Réseautage & amitié</h4>
+          <p class="small">Un mix entre networking professionnel et rencontres amicales.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- === SIGNUP / PROFILE FORM === -->
+    <section id="page-signup" class="hidden" aria-hidden="true">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:10px">
+        <h2>Inscription & création de profil</h2>
+        <div class="small">Déjà inscrit ? <a href="#" id="back-home-1">Retour accueil</a></div>
+      </div>
+
+      <div class="notice">
+        <strong>Important :</strong> Les dîners se déroulent uniquement les <strong>mercredi, samedi et dimanche</strong> — créneaux le soir entre <strong>18:00/6:00PM</strong> et <strong>19:00/7:00PM</strong> à vous de choisir votre heure de convenance.
+      </div>
+
+      <!-- FormSubmit envoi direct sur ahmedicare13@gmail.com -->
+      <form id="signup-form" class="form-wrap" action="https://formsubmit.co/ahmedicare13@gmail.com" method="POST" enctype="multipart/form-data" onsubmit="return handleSubmit(event)" novalidate>
+        <!-- hidden inputs for FormSubmit -->
+        <input type="hidden" name="_subject" value="Nouvelle inscription - Dîners Inconnus">
+        <input type="hidden" name="_template" value="table">
+        <!-- You can set _next to a thank-you page url; for demo we'll show on-screen confirmation -->
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- basic info -->
+        <div class="field"
+        style="margin-bottom:12px">
+          <label for="firstName">Prénom *</label>
+          <input id="firstName" name="Prénom" type="text" placeholder="Votre prénom" required>
+        </div>
+
+        <div style="margin-bottom:12px">
+          <label for="lastName">Nom *</label>
+          <input id="lastName" name="Nom" type="text" placeholder="Votre nom de famille" required>
+        </div>
+
+        <div class="row">
+          <div style="flex:1">
+            <label for="age">Âge *</label>
+            <input id="age" name="Âge" type="number" min="18" placeholder="Âge" required>
+          </div>
+          <div style="flex:2">
+            <label for="email">E-mail *</label>
+            <input id="email" name="Email" type="email" placeholder="exemple@domaine.com" required>
+          </div>
+          <div style="flex:1">
+            <label for="phone">Téléphone (optionnel)</label>
+            <input id="phone" name="Téléphone" type="tel" placeholder="ex : +229 01...">
+          </div>
+        </div>
+
+        <hr style="margin:14px 0;border:none;border-top:1px solid #eef2f7">
+
+        <!-- personality form -->
+        <div class="field">
+          <label>Mots-clés personnalité * (3–5 choix)</label>
+          <div class="multiselect" id="personalitySelect">
+            <div class="multiselect-toggle" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">
+              <div class="chips" data-placeholder="Choisis 3 à 5 traits..."></div>
+              <div style="color:var(--muted);font-size:13px">▾</div>
+            </div>
+            <div class="multiselect-panel hidden" aria-hidden="true"></div>
+          </div>
+          <div class="limit-note small">Choisissez entre 3 et 5 traits pour un matching optimal.</div>
+        </div>
+
+        <div class="field" 
+        style="margin-bottom:12px">
+          <label for="character">Caractère *</label>
+          <select id="character" name="Caractère" required>
+            <option value="">— Choisissez —</option>
+            <option value="sociable">Sociable / Extraverti</option>
+            <option value="calme">Calme / Introverti</option>
+            <option value="equilibre">Équilibré</option>
+            <option value="curieux">Curieux / Explorateur</option>
+          </select>
+        </div>
+
+        <!-- profession & passions -->
+        <div class="field"
+        style="margin-bottom:12px">
+          <label for="profession">Profession *</label>
+          <input id="profession" name="Profession" type="text" placeholder="Ex : Infirmier, étudiant, développeur..." required>
+        </div>
+
+        <div class="field"
+          style="margin-bottom:12px">
+          <label>Passions / Centres d'intérêt * (3–5 choix)</label>
+          <div class="multiselect" id="passionsSelect">
+            <div class="multiselect-toggle" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">
+              <div class="chips" data-placeholder="Choisis 3 à 5 passions..."></div>
+              <div style="color:var(--muted);font-size:13px">▾</div>
+            </div>
+            <div class="multiselect-panel hidden" aria-hidden="true"></div>
+          </div>
+          <div class="limit-note small">Choisissez entre 3 et 5 passions pour faciliter le matching.</div>
+        </div>
+
+        <div class="field"
+        style="margin-bottom:12px">
+          <label for="share">Ce que vous aimeriez partager ou discuter lors du dîner.</label>
+          <textarea id="share" name="Sujets_à_partager" placeholder="Ex : startups, lecture, sport, cuisine..."></textarea>
+        </div>
+
+        <div style="margin-bottom:12px">
+          <label for="cv">CV / Présentation (PDF / DOC, optionnel)</label>
+          <input id="cv" name="CV" type="file" accept=".pdf,.doc,.docx">
+          <div class="small">Le CV permet d'aider au matching (optionnel).</div>
+        </div>
+
+        <!-- availability: dynamic select with only Wed/Sat/Sun for next X weeks -->
+        <div class="field" 
+        style="margin-bottom:12px">
+          <label for="dinnerDate">Choisissez une date disponible *</label>
+          <select id="dinnerDate" name="Date_choisie" required>
+            <option value="Choisissezune date">Chargement des dates disponibles…</option>
+          </select>
+          <div class="small">Dîners uniquement les mercredi / samedi / dimanche — créneaux 18:00 ou 19:00.</div>
+        </div>
+
+        <div class="field" 
+        style="margin-bottom:12px">
+          <label for="timeSlot">Créneau horaire *</label>
+          <select id="timeSlot" name="Créneau_horaire" required>
+            <option value="18:00/6:00pm">18:00/6:00pm</option>
+            <option value="19:00/7:00pm">19:00/7:00pm</option>
+          </select>
+        </div>
+
+       <div class="flex-right" style="margin-top:6px">
+          <button type="button" class="btn-secondary" onclick="goHome()">Annuler</button>
+          <button type="submit" class="btn-primary">S'inscrire & Envoyer le profil</button>
+        </div>
+      </form>
+
+      <div id="submitMessage" class="hidden card" style="margin-top:12px"></div>
+    </section>
+
+    <!-- Book quick view (simple) -->
+    <section id="page-book" class="hidden" aria-hidden="true">
+      <h2>Réserver un dîner</h2>
+      <p class="small">Choisissez une date et inscrivez-vous via le formulaire — nous vous contacterons ensuite pour confirmer et vous indiquer le paiement.</p>
+      <div style="max-width:420px">
+        <label>Choisissez une date</label>
+        <select id="quickDate"></select>
+        <div style="margin-top:10px">
+          <button class="btn-primary" onclick="prefillQuick()">Réserver cette date</button>
+          <button class="btn-secondary" onclick="goHome()">Retour</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="small">© <strong>Dîners Inconnus - by Hermès & Co</strong> — Pour paiement/information : <a href="mailto:ahmedicare13@gmail.com">ahmedicare13@gmail.com</a></div>
+    </footer>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+</html>
+
+  
